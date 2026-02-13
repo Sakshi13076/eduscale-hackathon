@@ -1,7 +1,12 @@
 const express = require("express");
+const jwt = require("jsonwebtoken");
+const cors = require("cors");
 
 const app = express();
-const jwt = require("jsonwebtoken");
+
+app.use(cors());
+app.use(express.json());
+
 
 // Middleware to verify token
 function authenticateToken(req, res, next) {
